@@ -1,0 +1,86 @@
+html{
+    color: black;
+}
+.main-header{
+    background-color: linear-gradient
+    (rgb(197,141,137)),(rgb(252,232,204));
+    position:fixed;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    height: 48px;
+}
+.header-info{
+    text-align: left;
+    position: absolute;
+    left: 0%;
+    padding: 0%;
+    margin: 14px 14px 0 14px;
+}
+.header-info a{
+    padding: 0%;
+    font-size:20px;
+    text-decoration: none;
+    color: white;
+}
+.header-info-hover{
+    background-color: transparent;
+}
+nav{
+    position: absolute;
+    right: 0%;
+    display: flex;
+    color: white;
+    
+    
+}
+a{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 15px;
+    float: left;
+    color: white;  
+}
+a:hover{
+    background-color: black;
+}
+.jumbotron{
+    margin-top: 5%;
+}
+.jumbotron h1,p{
+    text-align: center;
+}
+.jumbotron img{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+title{
+    font-style: initial;
+    color: blue;
+}
+h1,h2,h3,p{
+    text-align: center;
+    color: rgb(146, 14, 14);
+}
+.items{
+    display: flex;
+    justify-content: center;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.potrait{
+    width: 250px;
+    height: 360px;
+}
+.landscapea{
+    width: 350px;
+    height: 240px;
+}
+.image{
+    size: 100;
+}
