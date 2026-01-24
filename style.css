@@ -58,11 +58,19 @@ a:hover{
 }
 title{
     font-style: initial;
+<<<<<<< HEAD
     color: rgba(0, 0, 0, 0.221);
 }
 h1,h2,h3,p{
     text-align: center;
     color: rgba(67, 71, 77, 0.92);
+=======
+    color: blue;
+}
+h1,h2,h3,p{
+    text-align: center;
+    color: rgb(146, 14, 14);
+>>>>>>> aabf76c625e1ccc09c1bba4f1bcb575f511cf18f
 }
 .items{
     display: flex;
