@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -670,3 +671,488 @@ Mohon diproses ya.
 		</script>
 	</body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>zamier Marketplace</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			.products {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 20px;
+				padding: 20px;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.product-card {
+				background: rgba(255, 255, 255, 0.9);
+				border-radius: 10px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				width: 220px;
+				min-height: 320px;
+				text-align: center;
+				padding: 15px;
+				transition: transform 0.3s ease;
+			}
+
+			.product-card:hover {
+				transform: scale(1.05);
+			}
+
+			.product-card img {
+				width: 100%;
+				height: 160px;
+				object-fit: cover;
+				border-radius: 6px;
+			}
+
+			.product-card h3 {
+				margin: 10px 0 5px;
+				color: #333;
+			}
+
+			.product-card p {
+				color: #666;
+				font-size: 14px;
+				min-height: 40px;
+			}
+
+			.product-card button {
+				background: #3498db;
+				color: white;
+				border: none;
+				padding: 10px 15px;
+				border-radius: 5px;
+				cursor: pointer;
+				margin-top: 10px;
+				transition: background 0.3s;
+			}
+
+			.product-card button:hover {
+				background: #2980b9;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				background: linear-gradient(to bottom, #000000, #e0e0e0);
+				overflow-x: hidden;
+			}
+
+			.section {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				background-size: cover;
+				background-position: center;
+				flex-direction: column;
+			}
+
+			.section:nth-child(1) {
+				background-image: url("https://via.placeholder.com/1920x1080/3498db/ffffff?text=Marketplace+Header");
+			}
+
+			.section:nth-child(2) {
+				background-image: url("https://via.placeholder.com/1920x1080/e74c3c/ffffff?text=Produk+Section");
+			}
+
+			.section:nth-child(3) {
+				background-image: url("https://via.placeholder.com/1920x1080/2ecc71/ffffff?text=Produk+2");
+			}
+
+			.section:nth-child(4) {
+				background-image: url("https://via.placeholder.com/1920x1080/f39c12/ffffff?text=Produk+3");
+			}
+
+			.section:nth-child(5) {
+				background-image: url("https://via.placeholder.com/1920x1080/9b59b6/ffffff?text=Footer+Marketplace");
+			}
+
+			.content {
+				text-align: center;
+				color: white;
+				font-size: 2em;
+				opacity: 0;
+				transform: translateY(50px);
+				transition: opacity 1s ease, transform 1s ease;
+			}
+
+			.content.animate {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.scroll-indicator {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				font-size: 1.5em;
+				color: #333;
+				animation: bounce 2s infinite;
+			}
+
+			@keyframes bounce {
+				0%,
+				20%,
+				50%,
+				80%,
+				100% {
+					transform: translateY(0);
+				}
+				40% {
+					transform: translateY(-10px);
+				}
+				60% {
+					transform: translateY(-5px);
+				}
+			}
+
+			.cart-overlay {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 0;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.4);
+				overflow: hidden;
+				transition: width 0.3s ease;
+				z-index: 9999;
+			}
+
+			.cart-box {
+				position: absolute;
+				top: 0;
+				right: -350px;
+				width: 350px;
+				height: 100%;
+				background: #fff;
+				padding: 20px;
+				box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+				transition: right 0.3s ease;
+			}
+
+			.cart-open .cart-overlay {
+				width: 100%;
+			}
+			.cart-open .cart-box {
+				right: 0;
+			}
+
+			.cart-item img {
+				width: 100%;
+				border-radius: 10px;
+			}
+
+			.cart-title {
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+
+			.cart-price {
+				font-size: 16px;
+				margin: 10px 0;
+			}
+
+			.close-cart {
+				background: #e74c3c;
+				color: white;
+				padding: 10px 15px;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				width: 100%;
+			}
+
+			.checkout-btn {
+				background: #27ae60;
+				color: white;
+				padding: 10px 15px;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				width: 100%;
+				margin-top: 10px;
+			}
+
+			@media (max-width: 768px) {
+				header .main-header {
+					flex-direction: column;
+					text-align: center;
+					gap: 10px;
+				}
+
+				nav a {
+					font-size: 14px;
+					margin: 0 5px;
+				}
+
+				.section {
+					height: auto;
+					padding: 60px 20px;
+				}
+
+				.content {
+					font-size: 1.3em;
+				}
+
+				.products {
+					display: grid;
+					grid-template-columns: 1fr;
+					width: 100%;
+					padding: 10px;
+				}
+
+				.product-card {
+					width: 90%;
+					margin: 0 auto;
+				}
+
+				.product-card img {
+					height: 140px;
+				}
+
+				.cart-box {
+					width: 100%;
+					right: -100%;
+				}
+
+				.cart-open .cart-box {
+					right: 0;
+				}
+
+				.cart-item img {
+					width: 80%;
+					margin: auto;
+				}
+
+				.cart-title {
+					font-size: 18px;
+					text-align: center;
+				}
+
+				.cart-price {
+					font-size: 14px;
+					text-align: center;
+				}
+
+				.checkout-btn,
+				.close-cart {
+					width: 100%;
+					font-size: 15px;
+				}
+
+				.scroll-indicator {
+					display: none;
+				}
+			}
+
+			@media (max-width: 480px) {
+				header .main-header h3 {
+					font-size: 18px;
+				}
+
+				.content {
+					font-size: 1.1em;
+				}
+
+				.product-card img {
+					height: 130px;
+				}
+
+				.product-card h3 {
+					font-size: 16px;
+				}
+
+				.product-card p {
+					font-size: 13px;
+				}
+
+				nav a {
+					font-size: 12px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="main-header">
+				<h3 class="header-info">
+					<a href="index.html"> Welcome Everyone </a>
+				</h3>
+				<nav>
+					<a href="">Home</a>
+					<a href="">Price</a>
+					<a href="">About Us</a>
+				</nav>
+			</div>
+		</header>
+
+		<div class="scroll-indicator">⬇ Scroll ke bawah</div>
+
+		<div class="section">
+			<div class="content" id="content1">
+				<h2>Selamat Datang di zamier Marketplace</h2>
+				<p>Jelajahi produk terbaik kami!</p>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="content animate" id="content2">
+				<h2>Produk Unggulan Kami</h2>
+
+				<div class="products">
+					<div class="product-card">
+						<img src="image/setkitchen1.jpg" alt="Produk 1" />
+						<h3>Produk 1</h3>
+						<p>American style set kitchen. Harga: Rp 100.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+
+					<div class="product-card">
+						<img src="image/setkitchen2.jpeg" alt="Produk 2" />
+						<h3>Produk 2</h3>
+						<p>Classic style set kitchen. Harga: Rp 150.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+
+					<div class="product-card">
+						<img src="image/setkitchen3.jpg" alt="Produk 3" />
+						<h3>Produk 3</h3>
+						<p>Exclusive style set kitchen. Harga: Rp 200.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="content" id="content3">
+				<h2>Produk Unggulan 2</h2>
+				<p>Deskripsi produk kedua yang muncul saat scroll.</p>
+
+				<div class="products">
+					<div class="product-card">
+						<img src="image/setkitchen4.jpg" alt="Produk 4" />
+						<h3>Produk 4</h3>
+						<p>Harga: Rp 300.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+
+					<div class="product-card">
+						<img src="image/setkitchen5.jpg" alt="Produk 5" />
+						<h3>Produk 5</h3>
+						<p>Harga: Rp 350.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="content" id="content4">
+				<h2>Produk Unggulan 3</h2>
+				<p>Deskripsi produk ketiga dengan efek animasi.</p>
+
+				<div class="products">
+					<div class="product-card">
+						<img src="image/setkitchen6.jpeg" alt="Produk 6" />
+						<h3>Produk 6</h3>
+						<p>Harga: Rp 400.000</p>
+						<button>Beli Sekarang</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="content" id="content5">
+				<h2>Terima Kasih Telah Berkunjung</h2>
+				<p>Marketplace selesai. Scroll sampai akhir!</p>
+			</div>
+		</div>
+
+		<div class="cart-overlay" id="cartOverlay">
+			<div class="cart-box" id="cartBox">
+				<h2>Keranjang Belanja</h2>
+
+				<div class="cart-item">
+					<img id="cartImage" src="" />
+					<div class="cart-title" id="cartName"></div>
+					<div class="cart-price" id="cartPrice"></div>
+				</div>
+
+				<button class="checkout-btn">Checkout</button>
+				<button class="close-cart" onclick="closeCart()">Tutup</button>
+			</div>
+		</div>
+
+		<script>
+			window.addEventListener("scroll", function () {
+				const sections = document.querySelectorAll(".section")
+				const contents = document.querySelectorAll(".content")
+
+				sections.forEach((section, index) => {
+					const rect = section.getBoundingClientRect()
+					if (rect.top < window.innerHeight * 0.75) {
+						contents[index].classList.add("animate")
+					}
+				})
+			})
+
+			function openCart(name, price, img) {
+				document.getElementById("cartName").innerText = name
+				document.getElementById("cartPrice").innerText = price
+				document.getElementById("cartImage").src = img
+
+				document.body.classList.add("cart-open")
+			}
+
+			function closeCart() {
+				document.body.classList.remove("cart-open")
+			}
+
+			const productButtons = document.querySelectorAll(".product-card button")
+
+			productButtons.forEach((btn) => {
+				btn.addEventListener("click", function () {
+					const card = this.parentElement
+					const name = card.querySelector("h3").innerText
+					const price = card.querySelector("p").innerText
+					const img = card.querySelector("img").src
+
+					openCart(name, price, img)
+				})
+			})
+			const checkoutBtn = document.querySelector(".checkout-btn")
+
+			checkoutBtn.addEventListener("click", function () {
+				const productName = document.getElementById("cartName").innerText
+				const productPrice = document.getElementById("cartPrice").innerText
+				const productImg = document.getElementById("cartImage").src
+
+				const message = `
+Halo, saya ingin membeli produk berikut:
+📌 *Produk*: ${productName}
+💰 *Harga*: ${productPrice}
+🖼 Gambar: ${productImg}
+Mohon diproses ya.
+            `
+				const encodedMessage = encodeURIComponent(message)
+				const phoneNumber = "62881036059698" 
+				window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank")
+			})
+		</script>
+	</body>
+</html>
+>>>>>>> 1ff0e55008b67440b71153ca004ba16abebcf044
