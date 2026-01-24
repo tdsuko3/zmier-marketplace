@@ -58,11 +58,11 @@ a:hover{
 }
 title{
     font-style: initial;
-    color: blue;
+    color: rgba(0, 0, 0, 0.221);
 }
 h1,h2,h3,p{
     text-align: center;
-    color: rgb(146, 14, 14);
+    color: rgba(67, 71, 77, 0.92);
 }
 .items{
     display: flex;
